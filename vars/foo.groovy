@@ -4,9 +4,9 @@ def call(int buildNumber) {
     pipeline {
       agent any
       stages {
-        stage('Even Stage') {
+        stage('Stage 1') {
           steps {
-            echo "The build number is even: " + buildNumber
+            echo "El número del Stage 1 es: " + buildNumber
           }
         }
       }
@@ -15,9 +15,9 @@ def call(int buildNumber) {
     pipeline {
       agent any
       stages {
-        stage('Odd Stage') {
+        stage('Stage 2') {
           steps {
-            echo "The build number is odd: " + buildNumber
+            echo "El número del Stage 2 es: " + buildNumber
           }
         }
       }
