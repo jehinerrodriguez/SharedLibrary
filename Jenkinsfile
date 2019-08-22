@@ -2,12 +2,14 @@
 
 pipeline {
     agent none
-    stage ('Example') {
-        steps {
+    stages {
+        stage ('Example') {
+            steps {
             // log.info 'Starting' 
-            script { 
-                log.info 'Starting'
-                log.warning 'Nothing to do!'
+                script { 
+                    log.info 'Starting'
+                    log.warning 'Nothing to do!'
+                }
             }
         }
     }
