@@ -4,24 +4,29 @@ def call(int buildNumber) {
     pipeline {
       agent any
       stages {
-        stage('Stage 1') {
+
+        stage('Stage IF') {
           steps {
-            echo "El número del Stage 1 es: " + buildNumber
-            script { 
+            echo "El numero del Stage 1 es: " + buildNumber
+          }
+        }
+
+        stage('Foo Stage'){
+                script { 
                     log.info 'Starting'
                     log.warning 'Nothing to do!'
             }
-          }
         }
+        
       }
     }
   } else {
     pipeline {
       agent any
       stages {
-        stage('Stage 2') {
+        stage('Stage ELSE') {
           steps {
-            echo "El número del Stage 2 es: " + buildNumber
+            echo "El numero del Stage 2 es: " + buildNumber
           }
         }
       }
