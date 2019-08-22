@@ -11,13 +11,15 @@ def call(int buildNumber) {
           }
         }
 
-        stage('Foo Stage'){
+        stage('Foo Stage IF'){
+            steps {
                 script { 
-                    log.info 'Starting'
-                    log.warning 'Nothing to do!'
+                    log.info 'Este es el mensaje desde Foo IF'
+                    log.warning 'No hay advertencias desde Foo IF!'
+                }
             }
         }
-        
+
       }
     }
   } else {
@@ -29,6 +31,17 @@ def call(int buildNumber) {
             echo "El numero del Stage 2 es: " + buildNumber
           }
         }
+
+        
+        stage('Foo Stage ELSE'){
+            steps {
+                script { 
+                    log.info 'Este es el mensaje desde Foo ELSE'
+                    log.warning 'No hay advertencias desde Foo ELSE!'
+                }
+            }
+        }
+
       }
     }
   }
