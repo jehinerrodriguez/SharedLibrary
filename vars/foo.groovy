@@ -7,6 +7,10 @@ def call(int buildNumber) {
         stage('Stage 1') {
           steps {
             echo "El número del Stage 1 es: " + buildNumber
+            script { 
+                    log.info 'Starting'
+                    log.warning 'Nothing to do!'
+            }
           }
         }
       }
