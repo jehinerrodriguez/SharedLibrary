@@ -1,17 +1,14 @@
 @Library('my-shared-library')_
 
-
-
 pipeline {
-  agent any
-   
-  stages {
-        
-    stage('Demo') {
-
-        echo 'Hello World'
-
-        call 'Dave'
-    }     
-  }
+    agent none
+    stage ('Example') {
+        steps {
+            // log.info 'Starting' 
+            script { 
+                log.info 'Starting'
+                log.warning 'Nothing to do!'
+            }
+        }
+    }
 }
