@@ -1,10 +1,9 @@
-libraries {
-  lib('my-shared-library')
-}
+@Library('my-shared-library')_
 
-pipeline {
-    stage('Demo') {
-    echo 'Hello world'
-    sayHello 'Dave'
-    } 
+stage('Demo') {
+
+  echo 'Hello World'
+
+  sayHello 'Dave'
+
 }
